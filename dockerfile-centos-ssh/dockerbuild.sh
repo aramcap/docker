@@ -1,0 +1,1 @@
+docker build --build-arg SSH_USERS="root|root,vagrant|vagrant" -t centos-ssh .
