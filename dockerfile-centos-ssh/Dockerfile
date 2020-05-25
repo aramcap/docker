@@ -11,7 +11,8 @@ EXPOSE 22
 
 ARG SSH_USERS="root|root"
 ADD ./start.sh /start.sh
-RUN chmod 755 /start.sh
+RUN chmod 700 /start.sh
 RUN ./start.sh ${SSH_USERS}
+RUN rm -f /start.sh
 
 ENTRYPOINT ["/usr/sbin/sshd", "-D"]
